@@ -1,0 +1,55 @@
+.apps-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.apps-choose{
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.title-apps{
+    font-family: 'TT Hoves', sans-serif;
+    font-weight: 500;
+}
+
+.arrow {
+    transform: translateY(8px);
+    width: 40px;
+    height: 40px;
+}
+
+.apps {
+    display: flex;
+    gap: 12px;
+}
+
+.app {
+    cursor: pointer;
+    width: 128px;
+    height: 128px;
+    border: gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.app-icon {
+    width: 48px;
+    height: 48px;
+}
+
+.app-name{
+    font-size: 16px;
+    font-weight: 500;
+}

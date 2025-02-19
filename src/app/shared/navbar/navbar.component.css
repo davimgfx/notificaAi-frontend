@@ -1,4 +1,4 @@
-@import url('../styles/styles.css');
+@import url('../../../styles/styles.css');
 
 .header{
     display: flex;
@@ -6,6 +6,7 @@
     align-items: center;
     padding: 24px 32px;
     background-color: #F9F9FF;
+    font-family: 'TT Hoves', sans-serif;
 }
 
 .nav_links{
@@ -32,3 +33,4 @@
     width: 48px;
     height: 48px;
 }
+

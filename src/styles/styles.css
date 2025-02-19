@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  font-family: 'TT Hoves', sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: local('TT Hoves Regular'), local('TTHoves-Regular'),
+        url('../fonts/TTHoves-Regular.woff2') format('woff2'),
+        url('../fonts/TTHoves-Regular.woff') format('woff'),
+        url('../fonts/TTHoves-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: local('TT Hoves DemiBold'), local('TTHoves-DemiBold'),
+        url('../fonts/TTHoves-DemiBold.woff2') format('woff2'),
+        url('../fonts/TTHoves-DemiBold.woff') format('woff'),
+        url('../fonts/TTHoves-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: local('TT Hoves Medium'), local('TTHoves-Medium'),
+        url('../fonts/TTHoves-Medium.woff2') format('woff2'),
+        url('../fonts/TTHoves-Medium.woff') format('woff'),
+        url('../fonts/TTHoves-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
