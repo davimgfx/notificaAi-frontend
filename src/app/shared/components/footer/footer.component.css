@@ -1,0 +1,7 @@
+.footer{
+    margin-top: 64px;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--gray);
+    margin-bottom: 64px;
+}

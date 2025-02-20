@@ -1,0 +1,78 @@
+.how-works{
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.how-works-title{
+    margin-top: 32px;
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.step {
+    margin-top: 32px;
+    border-radius: 8px;
+    width: auto;
+    background: #F9F9FB;
+    padding: 48px;
+    border: 1px solid var(--gray);
+}
+
+.step-title{
+     font-size: 16px;
+    font-weight: 600;
+    color: #713F12;
+    padding: 8px 12px;
+    background-color: #FFF6CC;
+    border-radius: 8px;
+    border: 1px solid hsla(49, 100%, 20%, 0.107);
+}
+
+.step-content{
+    margin-top: 24px;
+    display: flex;
+    gap:24px
+}
+
+.step-content-texts{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-content-texts h3{
+    font-size: 36px;
+}
+
+.step-content-texts span{
+    font-size: 18px;
+}
+
+.step-content-images{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.apps-images{
+    width: 300px;
+}
+
+.apps-list{
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.app-check{
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.create-notification-image{
+    width: 500px;
+}

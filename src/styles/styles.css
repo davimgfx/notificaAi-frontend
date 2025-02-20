@@ -8,9 +8,22 @@
   font-family: 'TT Hoves', sans-serif;
 }
 
+:root {
+  --button_primary: #aa4cf9;
+  --button_primary_hover: #813eb8;
+  --button_primary_transparent: #8900fa41;
+  --text_link: #4F46E4;
+  --text_link_hover: #24206b;
+  --gray_light: #e1e1e1;
+  --gray: #d1d1d1;
+  --gray_dark: #848484;
+  --white: #FFFFFF;
+  --black: #0000000;
+}
+
 a:link, a:visited, a:hover, a:active {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 @font-face {

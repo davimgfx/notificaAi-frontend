@@ -1,5 +1,6 @@
 @import url('../../../../styles/styles.css');
 
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -29,4 +30,42 @@
     font-size: 24px;
 }
 
+.buttons{
+    display: flex;
+    gap: 12px;
+}
+
+.button{
+  cursor: pointer;
+  padding: 12px 32px;
+  line-height: 28px; 
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button_primary{
+    background: var(--button_primary);
+    color: var(--white) !important;
+}
+
+.button_primary:hover {
+    background: var(--button_primary_hover);
+}
+
+.button_second{
+    color: var(--black);
+    background: var(--white);
+    border: 1px solid var(--gray);
+}
+
+.button_second:hover{
+    color: var(--black);
+    background: var(--gray_light);
+    border: 1px solid var(--gray_dark);
+}
 
