@@ -10,9 +10,9 @@ import { PlansComponent } from "./pages/home/plans/plans.component";
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, NavbarComponent, HeroComponent, AppsChooseComponent, HowWorksComponent, PlansComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './app.component.html'
 })
+
 export class AppComponent {
   title = 'notificaAi';
 }

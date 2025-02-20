@@ -1,6 +1,7 @@
 @import url('../../../../styles/styles.css');
 
 .header{
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,3 +42,61 @@
     height: 48px;
 }
 
+.hamburger_button{
+    display: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+
+}
+
+.hamburger_menu{
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    left: 0;
+    height: 0;
+    width: 100%;
+    
+}
+
+.menu{
+    display: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .header{
+        justify-content: space-between;
+    }
+    
+    .nav_link{
+    display: none;
+    }
+
+    .button_auth{
+    display: none;
+    }
+
+    .hamburger_button{
+    display: block;
+    }
+
+    .menu{
+    height: 300px;
+    width: 100%;
+    padding: 24px;
+    border-bottom: 1px solid var(--gray);
+    background: #F9F9FF;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+}

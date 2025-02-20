@@ -1,13 +1,13 @@
 <header class="header">
     <nav class="nav">
-        <ul class="nav_links">
+        <ul class="nav_links" >
             <li>
                 <div class="logo">
                     <img src="logo.png" alt="logo_notificaAi" class="logo_img">
                     <span>NotificaAi</span>
                 </div>
             </li>
-            <li class="nav_link">
+            <li class="nav_link" >
                 Produtos
             </li>
             <li class="nav_link">
@@ -18,22 +18,48 @@
             </li>
         </ul>
     </nav>
-    <nav >
+    <nav>
         <ul class="buttons_auth">
-            <li>
+            <li class="button_auth">
                 <app-button   
                     width="auto"
                     variant="normal"
                     type="button">
-                    <a href="login">Login</a>
+                    <a [routerLink]="AUTH_ROUTER.LOGIN">Login</a>
                 </app-button>
             </li>
-            <li>
+            <li class="button_auth">
                 <app-button
                     width="auto"
                     variant="outline"
                     type="button"
-                ><a href="register">Register</a></app-button>
+                ><a [routerLink]="AUTH_ROUTER.REGISTER">Register</a></app-button>
+            </li>
+            <li class="hamburger_button" (click)="toggleHamburgerMenu()">
+                <img *ngIf="isHamburgerMenuOpen; else closedMenu" src="hamburger-close.svg" alt="icon hamburger open">
+                <ng-template #closedMenu>
+                    <img src="hamburger-open.svg" alt="icon hamburger close">
+                </ng-template>
+            </li>
+        </ul>
+    </nav>
+  
+    <nav *ngIf="isHamburgerMenuOpen" class="hamburger_menu">
+        <ul class="menu">
+            <li>
+                Produtos
+            </li>
+            <li>
+                Preços
+            </li>
+             <li>
+                Sobre nós
+            </li>
+             <li>
+                 <a [routerLink]="AUTH_ROUTER.LOGIN">Login</a>
+            </li>
+             <li>
+                <a [routerLink]="AUTH_ROUTER.REGISTER">Registrar</a>
             </li>
         </ul>
     </nav>
