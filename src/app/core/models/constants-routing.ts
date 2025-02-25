@@ -1,6 +1,6 @@
 export const AUTH = {
     LOGIN: 'login',
-    REGISTER: 'register',
+    REGISTER: 'registrar',
 }
 
 export const HOME = {

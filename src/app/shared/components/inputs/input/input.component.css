@@ -1,0 +1,12 @@
+.input {
+  height: 43.19px;
+  border: 1px solid var(--gray);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid var(--button_primary);
+}
