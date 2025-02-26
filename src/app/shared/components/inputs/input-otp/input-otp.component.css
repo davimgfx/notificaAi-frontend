@@ -12,8 +12,10 @@
 }
 
 .inputs-otp .input-square:focus {
-  border: 2px solid var(--purple_transparent);
+  outline: none;
+  border: 2px solid var(--button_primary); 
 }
+
 .inputs-otp .bar {
   display: flex;
   align-items: center;

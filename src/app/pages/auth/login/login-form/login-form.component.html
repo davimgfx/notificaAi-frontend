@@ -1,0 +1,18 @@
+<form class="login_form" >
+    <img src="arrow-left.svg" alt="seta para voltar" class="arrow_back" (click)="backStep()" *ngIf="form_step === 2">
+    <div class="login_form_title">
+        <h2>Bem vindo de volta</h2>
+        <span>Entre na sua conta</span>
+    </div>
+    <div *ngIf="form_step === 1">
+        <div  class="login_form_input">
+            <label>Email</label>
+            <app-input placeholder="Digite seu email"></app-input>
+        </div>
+            <app-button width="auto" variant="normal" type="button" (click)="nextStep()">Próxima etapa</app-button>
+            <span>Não tem uma conta ainda <a [routerLink]="REGISTER_ROUTER">Criar agora</a></span>
+    </div>
+    <div *ngIf="form_step === 2">
+        <app-input-otp></app-input-otp>
+    </div>
+</form>

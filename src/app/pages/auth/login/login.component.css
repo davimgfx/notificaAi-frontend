@@ -1,12 +1,77 @@
+
+a {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.section{
+    position: relative;
+    height: 100%;
+}
 .logo{
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
     font-size: 18px;
+    position: absolute;
+    top:24px;
+    left: 24px
 }
 
-.logo .logo_img{
-    width: 48px;
-    height: 48px;
+.logo_img{
+    width: 35px;
+    height: 35px;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.login_part{
+    background: #F8F8F8;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    border-right: 1px solid var(--gray);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.twitter_part{
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-basis: 25%;
+    height: 100vh;
+}
+
+.twitter_part_message{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 512px;
+    margin: 0 auto;
+}
+
+.double_quotes{
+    width: 50px;
+    position: absolute;
+    top: -30px;
+    left: -45px;
+}
+
+.block_quote {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.twitter_part_message_name{
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }

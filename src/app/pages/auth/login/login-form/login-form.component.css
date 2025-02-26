@@ -1,0 +1,29 @@
+.login_form{
+    margin: 0 auto;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.arrow_back{
+    top: -50px;
+    cursor: pointer;
+    width: 50px;
+    transform: rotate(90deg);
+    position: absolute;
+}
+.login_form_title h2{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.login_form_title span{
+    font-size: 18px;
+}
+
+.login_form_input{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
