@@ -4,11 +4,12 @@
 }
 
 .inputs-otp .input-square {
-  width: 61px;
-  height: 61px;
+  width: 47px;
+  height: 47px;
   border: 1px solid var(--gray);
   border-radius: 0.5rem;
   text-align: center;
+  font-size: 16px;
 }
 
 .inputs-otp .input-square:focus {

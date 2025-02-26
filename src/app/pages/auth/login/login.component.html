@@ -1,13 +1,13 @@
 <section class="section">
-    <div class="logo">
+    <a class="logo" [routerLink]="HOME_ROUTER">
         <img src="logo.png" alt="logo_notificaAi" class="logo_img">
         <span>NotificaAi</span>
-    </div>
+    </a>
     <div class="container">
         <main class="login_part">      
             <app-login-form></app-login-form>         
         </main>
-        <div class="twitter_part">
+        <aside class="twitter_part">
             <div class="twitter_part_message">
                 <img src="double_quotes.png" alt="imagem de aspas duplas" class="double_quotes">
                 <blockquote class="block_quote">Working on my next SaaS app and I want this to be my whole job because I'm just straight out vibing putting it together.Ifs you willWorking on my next SaaS app and I want this to be my whole job because I'm just straight out vibing putting it together. , if you will</blockquote>
@@ -17,6 +17,6 @@
                     <span>&#64;Davimgfx</span>
                 </div>
             </div>
-        </div>
+        </aside>
     </div>
 </section>

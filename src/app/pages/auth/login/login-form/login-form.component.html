@@ -4,15 +4,19 @@
         <h2>Bem vindo de volta</h2>
         <span>Entre na sua conta</span>
     </div>
-    <div *ngIf="form_step === 1">
+    <div *ngIf="form_step === 1" class="form_step">
         <div  class="login_form_input">
             <label>Email</label>
-            <app-input placeholder="Digite seu email"></app-input>
+            <app-input placeholder="Digite seu email" type="email"></app-input>
         </div>
-            <app-button width="auto" variant="normal" type="button" (click)="nextStep()">Próxima etapa</app-button>
-            <span>Não tem uma conta ainda <a [routerLink]="REGISTER_ROUTER">Criar agora</a></span>
+        <app-button width="full" variant="normal" type="button" (click)="nextStep()">Próxima etapa</app-button>
+        <span>Não tem uma conta ainda? <a [routerLink]="REGISTER_ROUTER" class="link_text">Criar agora</a></span>
     </div>
-    <div *ngIf="form_step === 2">
-        <app-input-otp></app-input-otp>
+    <div *ngIf="form_step === 2"  class="form_step">
+        <div  class="login_form_input">
+            <label>Enviamos um código de confirgmação de 6 dígitos para seu email. Digite o codigo:</label>
+            <app-input-otp></app-input-otp>
+        </div>
+        <app-button width="full" variant="normal" type="button">Fazer login</app-button>
     </div>
 </form>

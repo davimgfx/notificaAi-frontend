@@ -16,7 +16,8 @@ a {
     font-size: 18px;
     position: absolute;
     top:24px;
-    left: 24px
+    left: 24px;
+    text-decoration: none;
 }
 
 .logo_img{
@@ -74,4 +75,11 @@ a {
     display: flex;
     gap: 12px;
     align-items: center;
+}
+
+@media only screen and (max-width: 1280px) {
+    .twitter_part{
+        display: none;
+    }
+
 }

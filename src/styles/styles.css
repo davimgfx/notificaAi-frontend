@@ -26,6 +26,16 @@ a:link, a:visited, a:hover, a:active {
   color: inherit;
 }
 
+.link_text {
+    color: var(--text_link) !important;
+    cursor: pointer;
+    text-decoration: underline !important;
+}
+
+.link_text:hover {
+    color: var(--text_link_hover)  !important;
+}
+
 @font-face {
     font-family: 'TT Hoves';
     src: local('TT Hoves Regular'), local('TTHoves-Regular'),
