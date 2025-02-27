@@ -1,0 +1,27 @@
+<form class="register_form" [formGroup]="createUserForm" (ngSubmit)="submitCreateUserForm()">
+    <img src="arrow-left.svg" alt="seta para voltar" class="arrow_back" (click)="backStep()" *ngIf="form_step === 2">
+    <div class="register_form_title">
+        <h2>Bem vindo ao NotificaAi</h2>
+        <span>Criar uma conta</span>
+    </div>
+    <div *ngIf="form_step === 1" class="form_step">
+          <div  class="register_form_input">
+            <label>Nome</label>
+            <app-input placeholder="Digite seu nome" type="text" formControlName="name"></app-input>
+        </div>
+        <div  class="register_form_input">
+            <label>Email</label>
+            <app-input placeholder="Digite seu email" type="email" formControlName="email"></app-input>
+        </div>
+
+        <app-button width="full" variant="normal" type="submit" (click)="nextStep()">Próxima etapa</app-button>
+        <span>Já tem uma conta? <a [routerLink]="LOGIN_ROUTER" class="link_text">Entrar agora</a></span>
+    </div>
+    <div *ngIf="form_step === 2"  class="form_step">
+        <div  class="register_form_input">
+            <label>Enviamos um código de confirgmação de 6 dígitos para seu email. Digite o codigo:</label>
+            <app-input-otp></app-input-otp>
+        </div>
+        <app-button width="full" variant="normal" type="button">Fazer register</app-button>
+    </div>
+</form>

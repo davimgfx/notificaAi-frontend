@@ -1,0 +1,35 @@
+.register_form{
+    margin: 0 auto;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+.arrow_back{
+    top: -50px;
+    cursor: pointer;
+    width: 50px;
+    transform: rotate(90deg);
+    position: absolute;
+}
+.register_form_title h2{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.register_form_title span{
+    font-size: 18px;
+}
+
+.register_form_input{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form_step{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
