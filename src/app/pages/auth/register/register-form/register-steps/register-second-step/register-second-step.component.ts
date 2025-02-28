@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { confirmAccountForm, hasErrorForm } from './confirm-form-constants';
 import { InputComponent } from "../../../../../../shared/components/inputs/input/input.component";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,12 +18,15 @@ import { InputOTPComponent } from "../../../../../../shared/components/inputs/in
 export class RegisterSecondStepComponent {
     confirmAccountForm = confirmAccountForm()
 
+    @ViewChild(InputOTPComponent) inputOTP!: InputOTPComponent;
+
     submitConfirmUserForm(){
         if (this.confirmAccountForm.valid) {
 
         }
 
         Object.values(this.confirmAccountForm.controls).forEach((control) => {
+            control.setValue(this.inputOTP.getValueInputOTP())
             if (control.invalid) {
             control.markAsDirty();
             control.updateValueAndValidity({ onlySelf: true });
