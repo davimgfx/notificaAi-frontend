@@ -22,6 +22,8 @@ export class InputComponent implements ControlValueAccessor {
 
   @Input() placeholder: string = '';
 
+  @Input() hasError: { [key: string]: boolean } = {};
+
   value: string = '';
   onChange: any = () => {};
   onTouched: any = () => {};

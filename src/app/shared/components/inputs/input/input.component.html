@@ -4,4 +4,5 @@
   class="input"
   [value]="value"
   (input)="onInput($event)"
-  (blur)="onTouched()" />
+  (blur)="onTouched()"
+  [class.input-error]="hasError['input-error']" />

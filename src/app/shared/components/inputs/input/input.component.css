@@ -12,3 +12,7 @@
   outline: none;
   border: 2px solid var(--button_primary);
 }
+
+.input-error {
+    border: 1px solid red ;
+}
