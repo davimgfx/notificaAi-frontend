@@ -1,0 +1,33 @@
+.board-columns{
+    display: flex;
+    gap: 24px;
+}
+
+.board-title{
+   user-select: none;
+}
+.board-column{
+    width: 284px;
+    border: 1px solid var(--gray);
+    padding: 16px; 
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 8px;
+}
+
+.task-card{
+    user-select: contain;
+    width: 100%;
+    border: 1px solid var(--gray);
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dragging{
+    background: rgb(177, 177, 177);
+    width: 250px;
+    height: 75px;
+}
+

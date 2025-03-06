@@ -1,0 +1,35 @@
+.sidebar{
+    width: 256px;
+    height: 100vh;
+    background: #F8F8F8;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.logo .logo_img{
+    width: 40px;
+    height: 40px;
+}
+
+.menu{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-item{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+

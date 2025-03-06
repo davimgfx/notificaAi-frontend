@@ -10,3 +10,7 @@ export const HOME = {
 export const SETTING = {
     ROOT: 'configuracoes',
 }
+
+export const DASHBOARD = {
+    ROOT: 'dashboard',
+}
