@@ -28,6 +28,7 @@ export function createAccountForm(): FormGroup<createAccountFormControl> {
 
 export function hasErrorForm(form: FormGroup, formControllerName: string): boolean {
     const control = form.get(formControllerName);
-    return !!(control && control.invalid && (control.dirty || control.touched));
+    
+    return !!(control && control.invalid && (control.dirty || control.touched) && control.value.length > 0);
 
 }
