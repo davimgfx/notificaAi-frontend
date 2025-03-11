@@ -1,4 +1,4 @@
-<main>
+<main class="main">
   <div class="board-columns">
     <div
       class="board-column"
@@ -9,17 +9,13 @@
       <div
         class="task-card"
         *ngFor="let task of column.tasks; let i = index"
-        draggable="true"
-        (dragstart)="onDragStart($event, task)"
-        (dragend)="onDragEnd($event)"
-        (dragover)="onDragOver($event)"
-        [ngClass]="{ 'dragging': task === draggedTask }"
+      
       >
         <div class="task-card-header">
-          <h3>{{ task === draggedTask ? '' : task.title }}</h3>
+          <h3>task.title </h3>
         </div>
         <div class="task-card-body">
-          <p>{{ task === draggedTask ? '' : task.description }}</p>
+          <p>task.description </p>
         </div>
       </div>
 

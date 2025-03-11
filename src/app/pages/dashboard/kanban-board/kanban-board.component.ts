@@ -42,27 +42,30 @@ export class KanbanBoardComponent {
         id_column: 3, 
         name: 'Pronto', 
         tasks: [{ id_task: 6, title: 'Task 6', description: 'Descrição da task 6' }]
-    }
+    },
+    {
+        id_column: 4, 
+        name: 'Pronto', 
+        tasks: [{ id_task: 6, title: 'Task 6', description: 'Descrição da task 6' }]
+    },
+    {
+        id_column: 5, 
+        name: 'Pronto', 
+        tasks: [{ id_task: 6, title: 'Task 6', description: 'Descrição da task 6' }]
+    },
+    {
+        id_column: 6, 
+        name: 'Pronto', 
+        tasks: [{ id_task: 6, title: 'Task 6', description: 'Descrição da task 6' }]
+    },
+    {
+        id_column: 7, 
+        name: 'Pronto', 
+        tasks: [{ id_task: 6, title: 'Task 6', description: 'Descrição da task 6' }]
+    },
   ];
 
-  draggedTask: Task | null = null;
 
-  onDragStart(event: DragEvent, task: Task) {
-    this.draggedTask = task;
-     console.log('onDragStart');
-   
-  }
 
-  onDragEnd(event: DragEvent) {
-    console.log('onDragEnd');
-    if(this.draggedTask) {
-      this.draggedTask = null;
-    }
-  }
-
-  onDragOver(event: DragEvent) {
-    event.preventDefault(); 
-    console.log('onDragOver');
-  }
 }
 
