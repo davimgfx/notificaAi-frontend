@@ -23,6 +23,7 @@ export function confirmAccountForm(): FormGroup<confirmAccountFormControl> {
 
 export function hasErrorForm(form: FormGroup, formControllerName: string): boolean {
     const control = form.get(formControllerName);
-    return !!(control && control.invalid && (control.dirty || control.touched));
+    
+    return !!(control && control.invalid && control.dirty);
 
 }

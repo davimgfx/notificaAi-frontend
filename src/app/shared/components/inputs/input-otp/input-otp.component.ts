@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   Component,
   ElementRef,
+  Input,
   QueryList,
   ViewChildren,
   forwardRef,
@@ -22,8 +23,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     },
   ],
 })
+
 export class InputOTPComponent implements ControlValueAccessor {
   @ViewChildren('otpInput') otpInputs!: QueryList<ElementRef>;
+
+  @Input() hasError: { [key: string]: boolean } = {};
 
   private _value: string = ''; // Agora é uma string completa
   onChange: (value: string) => void = () => {};
@@ -33,9 +37,9 @@ export class InputOTPComponent implements ControlValueAccessor {
   writeValue(value: string): void {
     this._value = value || '';
     this.updateInputs();
-  }
+}
 
-  registerOnChange(fn: (value: string) => void): void {
+registerOnChange(fn: (value: string) => void): void {
     this.onChange = fn;
   }
 
@@ -43,28 +47,26 @@ export class InputOTPComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  setDisabledState?(isDisabled: boolean): void {
-    this.otpInputs.forEach((input) => {
-      input.nativeElement.disabled = isDisabled;
-    });
-  }
-
   onInputChange(event: Event, index: number): void {
     const input = event.target as HTMLInputElement;
     const value = input.value;
 
-    if (value && /^[0-9]$/.test(value)) {
-      const valueArray = this._value.split('');
-      valueArray[index] = value;
-      this._value = valueArray.join('');
-
-      this.onChange(this._value);
-
-      if (index < this.otpInputs.length - 1) {
-        const nextInput = this.otpInputs.toArray()[index + 1].nativeElement;
-        nextInput.focus();
-      }
+    if (!/^[0-9]?$/.test(value)) {
+        input.value = ''; 
+        return;
     }
+    
+    const valueArray = this._value.split('');
+    valueArray[index] = value || ''; 
+    this._value = valueArray.join('');
+
+    this.onChange(this._value); 
+
+    if (value && index < this.otpInputs.length - 1) {
+        this.otpInputs.toArray()[index + 1].nativeElement.focus();
+    }
+
+     console.log(this._value)
   }
 
   onKeyDown(event: KeyboardEvent, index: number): void {
@@ -101,9 +103,11 @@ export class InputOTPComponent implements ControlValueAccessor {
 
   private updateInputs(): void {
     const valueArray = this._value.split('');
-    this.otpInputs.forEach((input, index) => {
-      input.nativeElement.value = valueArray[index] || '';
-    });
+    if(this.otpInputs){
+        this.otpInputs.forEach((input, index) => {
+          input.nativeElement.value = valueArray[index] || '';
+        });
+    }
   }
 
   getValueInputOTP(): string {

@@ -22,6 +22,7 @@ export class RegisterFirstStepComponent {
              this.stepChange.emit()
         }
 
+        
         Object.values(this.createUserForm.controls).forEach((control) => {
             if (control.invalid) {
             control.markAsDirty();

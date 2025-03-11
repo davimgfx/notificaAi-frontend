@@ -21,18 +21,19 @@ export class RegisterSecondStepComponent {
     @ViewChild(InputOTPComponent) inputOTP!: InputOTPComponent;
 
     submitConfirmUserForm(){
-        if (this.confirmAccountForm.valid) {
+        this.confirmAccountForm.setValue({ 
+            accessToken: this.inputOTP.getValueInputOTP()
+        })
 
-        }
+        console.log(this.confirmAccountForm.getRawValue())
 
         Object.values(this.confirmAccountForm.controls).forEach((control) => {
-            control.setValue(this.inputOTP.getValueInputOTP())
             if (control.invalid) {
             control.markAsDirty();
             control.updateValueAndValidity({ onlySelf: true });
             }
         });
-        
+      
     }
 
      hasErrorFormFunc(controlName : string) {
