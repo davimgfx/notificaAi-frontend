@@ -2,30 +2,37 @@
   <div class="board-columns">
     <div
       class="board-column"
-      *ngFor="let column of columns"
-    >
+      *ngFor="let column of columns">
       <h2 class="board-title">{{ column.name }}</h2>
-
       <div
         class="task-card"
-        *ngFor="let task of column.tasks; let i = index"
-      
-      >
+        *ngFor="let task of column.tasks; let i = index">
         <div class="task-card-header">
-          <h3>{{task.title}} <span>{{task.time}}</span> <img src="settings.svg" alt="icone de configurações"></h3>
-        </div>
-        <div class="task-card-body">
+          <h3>{{task.title}} <span>{{task.time}}</span> 
+          <img src="settings.svg" alt="icone de configurações"></h3>
           <p>{{task.description}} </p>
+        </div>
+        <div *ngIf="task.anticipation !== undefined && task.anticipation.length > 0">
+            <div class="task-card-body">
+                <ul >
+                    <li *ngFor="let min of task.anticipation; let i = index" class="anticipation">
+                        <span>Lembrar {{ min.minBefore }} minutos antes</span>
+                    </li>
+            </ul>
+            </div>
         </div>
         <div class="task-card-footer">
             <p>{{task.customMessage}} </p>
-            <span  *ngFor="let app of task.apps; let i = index">
-                 <img [src]="apps[app.app]" [alt]="app.app" width="24" height="24">
-            </span>
+            <div class="task-card-footer-end">
+                <div class="task-card-footer-apps">
+                    <span  *ngFor="let app of task.apps; let i = index" class="task-card-footer-app">
+                         <img [src]="apps[app.app]" [alt]="app.app" width="20" height="20">
+                    </span>
+                </div>
+                <span class="task-card-footer-repeater" *ngIf="task.repeater !== null">{{ task.repeater }}</span>
+            </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </main>

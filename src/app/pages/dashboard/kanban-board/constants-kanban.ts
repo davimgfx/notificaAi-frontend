@@ -20,8 +20,8 @@ export type Task = {
   time: string;
   date: string;
   customMessage: string;
-  repeater: "day" | "week" | "month" | "year"; 
-  anticipation: Anticipation[];
+  repeater: "day" | "week" | "month" | "year" | "Mensal" | "Semanal" | "Diário" | "Anual" | null; 
+  anticipation?: Anticipation[];
   apps: Apps[]; 
 }
 
@@ -30,7 +30,7 @@ export const appIcons = {
   telegram: 'telegram.svg',
   whatsapp: 'whatsapp.svg',
   x: 'x.svg',
-  gmail: 'gmail.svg'
+  gmail: 'email.svg'
 };
 
 export const staticColumns: Column[] = [
@@ -40,40 +40,36 @@ export const staticColumns: Column[] = [
         tasks: [
             { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
+              time: '10:00', date: '2021-10-10', repeater: "Semanal", customMessage: "Mensagem customizada",
               anticipation : [
                 { minBefore: 5 },
-                { minBefore: 10 },
                 { minBefore: 15 },
               ],
               apps: [
-                { app: "instagram" },
-                { app: "x"}
+                    { app: "instagram" },
+                    { app: "x"},
+                    { app: "telegram"},
+                    { app: "gmail"},
               ]  
             },
             { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
-              anticipation : [
-                { minBefore: 5 },
-                { minBefore: 10 },
-                { minBefore: 15 },
-              ],
+              time: '15:00', date: '2021-10-10', repeater: "Mensal", customMessage: "Mensagem customizada",
+              anticipation: [],  
               apps: [
                 { app: "instagram" },
-                { app: "x"}
+               
               ]  
             },
             { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
+              time: '18:00', date: '2021-10-10', repeater: null, customMessage: "Mensagem customizada",
               anticipation : [
                 { minBefore: 5 },
-                { minBefore: 10 },
-                { minBefore: 15 },
+            
               ],
               apps: [
-                { app: "instagram" },
+               
                 { app: "x"}
               ]  
             },
@@ -85,7 +81,7 @@ export const staticColumns: Column[] = [
         tasks: [
             { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
+              time: '10:00', date: '2021-10-10', repeater: "Mensal", customMessage: "Mensagem customizada",
               anticipation : [
                 { minBefore: 5 },
                 { minBefore: 10 },
@@ -104,7 +100,7 @@ export const staticColumns: Column[] = [
         tasks: [
            { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
+              time: '10:00', date: '2021-10-10', repeater: "Mensal", customMessage: "Mensagem customizada",
               anticipation : [
                 { minBefore: 5 },
                 { minBefore: 10 },
@@ -123,7 +119,7 @@ export const staticColumns: Column[] = [
         tasks: [
             { 
               id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "month", customMessage: "Mensagem customizada",
+              time: '10:00', date: '2021-10-10', repeater: "Mensal", customMessage: "Mensagem customizada",
               anticipation : [
                 { minBefore: 5 },
                 { minBefore: 10 },
