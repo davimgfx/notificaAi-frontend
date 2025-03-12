@@ -7,4 +7,25 @@
     overflow: auto;
     scrollbar-width: thin;
     scrollbar-color: #bbbbbb #ffffff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.subtitle_times{
+    display: flex;
+    gap: 8px;
+}
+
+.subtitle_time{
+    padding: 4px 6px;
+    border: 1px solid var(--gray);
+    border-radius: 8px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.subtitle_button{
+    margin-bottom: 24px;
+    
 }

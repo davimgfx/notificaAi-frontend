@@ -1,4 +1,12 @@
 <section class="section">
     <app-sidebar></app-sidebar>
-    <app-kanban-board class="kanban"></app-kanban-board>
+    <div class="kanban">
+        <h2>Notificações nos proximos 7 dias </h2>
+        <div class="subtitle_times">
+            <span  class="subtitle_time">Hoje</span>
+            <span class="subtitle_time">{{ formatted_date }}</span>
+        </div>
+        <app-button class="subtitle_button" [variant]="'normal'">Criar Notificações</app-button>
+        <app-kanban-board></app-kanban-board>
+    </div>
 </section>

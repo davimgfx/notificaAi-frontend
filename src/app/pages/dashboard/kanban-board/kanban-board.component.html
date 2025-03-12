@@ -12,10 +12,16 @@
       
       >
         <div class="task-card-header">
-          <h3>task.title </h3>
+          <h3>{{task.title}} <span>{{task.time}}</span> <img src="settings.svg" alt="icone de configurações"></h3>
         </div>
         <div class="task-card-body">
-          <p>task.description </p>
+          <p>{{task.description}} </p>
+        </div>
+        <div class="task-card-footer">
+            <p>{{task.customMessage}} </p>
+            <span  *ngFor="let app of task.apps; let i = index">
+                 <img [src]="apps[app.app]" [alt]="app.app" width="24" height="24">
+            </span>
         </div>
       </div>
 

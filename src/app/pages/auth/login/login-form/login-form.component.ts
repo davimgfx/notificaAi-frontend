@@ -5,11 +5,12 @@ import { InputOTPComponent } from "../../../../shared/components/inputs/input-ot
 import { AUTH } from '../../../../core/models/constants-routing';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoginFirstStepComponent } from "./login-steps/login-first-step/login-first-step.component";
 
 @Component({
   selector: 'app-login-form',
   standalone: true,
-  imports: [ButtonComponent, InputComponent, InputOTPComponent, RouterLink, CommonModule],
+  imports: [ButtonComponent, CommonModule, InputOTPComponent, RouterLink, CommonModule, LoginFirstStepComponent],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.css'
 })
