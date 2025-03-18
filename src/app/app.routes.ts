@@ -1,9 +1,10 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/auth/login/login.component';
-import { AUTH, DASHBOARD, HOME } from './core/models/constants-routing';
+import { AUTH, CALENDAR, DASHBOARD, HOME } from './core/models/constants-routing';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
 
 export const routes: Routes = [
     {
@@ -21,5 +22,9 @@ export const routes: Routes = [
   {
     path: DASHBOARD.ROOT,
     component: DashboardComponent,
+  },
+   {
+    path: CALENDAR.ROOT,
+    component: CalendarComponent,
   }
 ];

@@ -117,19 +117,7 @@ export const staticColumns: Column[] = [
         id_column: 4, 
         name: 'Planejado', 
         tasks: [
-            { 
-              id_task: 1, title: 'Task 1', description: 'Descrição da task 1',
-              time: '10:00', date: '2021-10-10', repeater: "Mensal", customMessage: "Mensagem customizada",
-              anticipation : [
-                { minBefore: 5 },
-                { minBefore: 10 },
-                { minBefore: 15 },
-              ],
-              apps: [
-                { app: "instagram" },
-                { app: "x"}
-              ]  
-            },
+            
         ]
     },
      {   

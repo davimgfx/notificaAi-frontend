@@ -14,3 +14,7 @@ export const SETTING = {
 export const DASHBOARD = {
     ROOT: 'dashboard',
 }
+
+export const CALENDAR = {
+    ROOT: 'calendario',
+}

@@ -3,6 +3,9 @@
     height: 100vh;
     background: #F8F8F8;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .logo{
@@ -12,18 +15,23 @@
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 20px;
+    border-bottom: 1px solid var(--gray);
+    padding: 16px 12px;
+
 }
 
 .logo .logo_img{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
 }
 
-.menu{
-    padding: 12px;
+.menu{ 
     display: flex;
     flex-direction: column;
-    gap: 12px;
+}
+
+.menu-bottom{
+    margin-bottom: 12px;
 }
 
 .menu-item{
@@ -31,6 +39,25 @@
     align-items: center;
     gap: 8px;
     cursor: pointer;
+    padding: 16px 8px;
+    margin: 0 8px;
+
 }
 
+.menu-item:hover{
+    background: #EAEAEA;
+    border-radius: 4px;
+}
 
+.user_img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user_info{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+}
