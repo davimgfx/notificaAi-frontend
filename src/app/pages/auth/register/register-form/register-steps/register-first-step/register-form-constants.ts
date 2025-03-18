@@ -1,6 +1,15 @@
 import { inject } from "@angular/core";
 import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
 
+export type ResponseUser = {
+    message: string;
+    success: boolean;
+    errors?: {
+        name?: string
+        email?: string
+    }
+}
+
 type createAccountFormControl = {
     name: FormControl<string>;
     email: FormControl<string>;
