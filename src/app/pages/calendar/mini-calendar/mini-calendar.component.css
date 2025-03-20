@@ -1,0 +1,60 @@
+.calendar-headline-title{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.calendar-headline-month{
+    font-size: 20px;
+}
+
+.calendar-headline-controls{
+    display:flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.calendar-headline-control{
+    cursor: pointer;
+}
+
+.calendar-weeks-grid{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    gap: 8px
+}
+
+.calendar-weeks-grid-cell{
+    cursor: pointer;
+    padding: 8px;
+   
+}
+
+.calendar-days-grid{
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+    gap: 8px;
+   
+}
+
+.calendar-grid-cell-day{
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 100px;
+}
+
+.calendar-grid-cell-outside-month{
+    opacity: 0.3;
+}
+
+.calendar-grid-cell-active{
+    background-color: var(--button_primary_transparent);
+    border-radius: 100px;
+}
+
+.schedule{
+    margin-top: 20px;
+}
