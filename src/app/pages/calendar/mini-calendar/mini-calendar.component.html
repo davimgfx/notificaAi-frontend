@@ -1,51 +1,56 @@
 <div>
-    <div>
-        <div>
-            <div class="calendar-headline-controls">
-                <div class="calendar-headline-control calendar-headline-control-previous" (click)="goToPreviousMonth()"><<</div>
-                    <h3 class="calendar-headline-month">{{ fistDayOfActiveMonth().monthLong }} {{ fistDayOfActiveMonth().year }}</h3>
-                <div class="calendar-headline-control calendar-headline-control-next" (click)="goToNextMonth()">>></div>
-              
-            </div>
-        </div>
-        <div class="calendar-weeks-grid">
-            @for (weekDay of weekDays(); track $index){
-                <div class="calendar-weeks-grid-cell">{{ weekDay }}</div>
+    <div class="calendar-headline-controls">
+        <div class="calendar-headline-control calendar-headline-control-previous" (click)="goToPreviousMonth()"><</div>
+        <h3 class="calendar-headline-month">{{ fistDayOfActiveMonth().monthLong }} {{ fistDayOfActiveMonth().year }}</h3>
+        <div class="calendar-headline-control calendar-headline-control-next" (click)="goToNextMonth()">></div>
+    </div>
+</div>
+
+<table class="calendar">
+    <thead class="calendar-days-of-week-names">
+        <tr class="calendar-days-of-week-names-grid">
+            @for (weekDay of weekDays(); track $index) {
+                <td class="calendar-day-of-week-name-cell">{{ weekDay }}</td>
             }
-        </div>
-        <div class="calendar-days-grid">
-            @for (dayOfMonth of daysOfMonth(); track $index){
-                <div  
-                [ngClass]=
-                    "{ 
-                        'calendar-grid-cell-outside-month': dayOfMonth.month !== fistDayOfActiveMonth().month,
-                        'calendar-grid-cell-active': activeDay()?.toISODate() === dayOfMonth.toISODate()
-                    }"
-                class="calendar-grid-cell-day"
-                (click)="onDayClick(dayOfMonth)"
-                >
-                    {{ dayOfMonth.day }}
+        </tr>
+    </thead>
+    <tbody class="calendar-days-of-weeks">
+        @for (week of daysOfMonth(); track $index) {
+            <tr class="calendar-week-days-grid">
+                @for (dayOfMonth of week; track $index) {
+                    <td
+                        [ngClass]=
+                            "{
+                                'calendar-grid-cell-outside-month': dayOfMonth.month !== fistDayOfActiveMonth().month,
+                                'calendar-grid-cell-active': activeDay()?.toISODate() === dayOfMonth.toISODate()
+                            }"
+                        class="calendar-day-cell"
+                        (click)="onDayClick(dayOfMonth)"
+                    >
+                        {{ dayOfMonth.day }}
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="schedule">
+    <div class="schedule-headline">
+        @if(activeDay(); as activeDay){
+            <div>{{ activeDay.toLocaleString(DATE_MED) }}</div>
+        }
+    </div>
+    <div class="schedule-content">
+        @if(activeDay() && activeDayMeetings().length === 0){
+            <div>No meetings</div>
+        }
+        @if(activeDay() && activeDayMeetings().length > 0){
+            @for(meetings of activeDayMeetings(); track $index){
+                <div class="schedule-content-meeting">
+                    <div>{{ meetings }}</div>
                 </div>
             }
-        </div>
-        <div class="schedule">
-            <div class="schedule-headline">
-                @if(activeDay(); as activeDay){
-                    <div>{{ activeDay.toLocaleString(DATE_MED) }}</div>
-                }
-            </div>
-            <div class="schedule-content">
-                @if(activeDay() && activeDayMeetings().length === 0){
-                    <div>No meetings</div>
-                }
-                  @if(activeDay() && activeDayMeetings().length > 0){
-                    @for(meetings of activeDayMeetings(); track $index){
-                        <div class="schedule-content-meeting">
-                            <div>{{ meetings }}</div>
-                        </div>
-                    }
-                }
-            </div>
-        </div>
+        }
     </div>
 </div>
