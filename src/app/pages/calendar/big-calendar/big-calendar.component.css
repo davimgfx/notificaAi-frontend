@@ -1,0 +1,37 @@
+.big-calendar{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+.calendar-days-of-weeks{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ .calendar-week-days-grid {
+    height: 100%;
+    flex: 1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    justify-items: center;
+  
+}
+
+.calendar-day-cell{
+    height: 100%;
+    flex: 1;
+    padding: 20px;
+    border: 1px solid var(--gray);
+    width: 100%;
+}

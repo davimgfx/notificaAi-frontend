@@ -1,0 +1,22 @@
+ <section class="big-calendar">
+     <div class="calendar-header">
+        <h2>{{ fistDayOfActiveMonth().monthLong }} {{ fistDayOfActiveMonth().year }}</h2>
+        <app-button width="auto" type="button" variant="normal">
+            Adicionar notificação
+        </app-button>
+     </div>
+     <div class="calendar-days-of-weeks">
+                @for (week of daysOfMonth(); track $index) {
+                    <div class="calendar-week-days-grid">
+                        @for (dayOfMonth of week; track $index) {
+                            <div
+                                class="calendar-day-cell"
+                            >
+                                {{ dayOfMonth.day }}
+     
+                            </div>
+                        }
+                    </div>
+                }
+     </div>
+ </section>

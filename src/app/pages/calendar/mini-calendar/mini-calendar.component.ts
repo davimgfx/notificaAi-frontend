@@ -59,6 +59,14 @@ export class MiniCalendarComponent {
         '2025-03-21': ["Use drugs", "Drink water"],
     };
 
+    getEventsForDay(dayOfMonth: DateTime): string[] | null {
+        const dayISO = dayOfMonth.toISODate();
+        if (dayISO) {
+            return this.meetings[dayISO];
+        }
+        return null;
+    }
+
     onDayClick(dayOfMonth: DateTime): void {
         if (dayOfMonth.month !== this.fistDayOfActiveMonth().month) {
             // Atualiza o mês ativo para o mês do dia clicado

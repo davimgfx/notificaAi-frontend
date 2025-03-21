@@ -1,4 +1,11 @@
 
+.mini-calendar{
+    width: 100%;
+    height: 100vh;
+    border-right: 1px solid var(--gray);
+    padding: 8px;
+}
+
 .calendar-headline-controls{
     display:flex;
     gap: 12px;
@@ -27,6 +34,12 @@
     background: var(--gray);
 }
 
+.calendar-days-of-weeks{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 4px;}
+
  .calendar-days-of-week-names-grid, .calendar-week-days-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -45,6 +58,18 @@
     display: flex;
     align-items: center ;
     justify-content: center;
+    position: relative;
+}
+
+.circle-events{
+    top: 27px;
+    left: 8px;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background-color: var(--button_primary);
+    margin-left: 4px;
 }
 
 .calendar-grid-cell-outside-month{
