@@ -3,6 +3,10 @@ export const AUTH = {
     REGISTER: 'registrar',
 }
 
+export const NOT_FOUND = {
+    ROOT: '**',
+}
+
 export const HOME = {
     ROOT: '',
 }

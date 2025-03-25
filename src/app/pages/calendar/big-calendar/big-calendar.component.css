@@ -31,7 +31,24 @@
 .calendar-day-cell{
     height: 100%;
     flex: 1;
-    padding: 20px;
     border: 1px solid var(--gray);
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.calendar-day-cell-events{
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+}
+
+.calendar-day-cell-event{
+    padding: 4px;
+    width: 100%;
+    background: var(--button_primary_transparent);
+    font-size: 12px;
+    border-radius: 4px;
 }

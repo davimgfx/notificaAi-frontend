@@ -10,6 +10,7 @@ import { ButtonComponent } from "../../../shared/components/button/button.compon
   styleUrl: './big-calendar.component.css'
 })
 export class BigCalendarComponent {
+    activeDay: WritableSignal<DateTime> = signal(DateTime.local());
     today: Signal<DateTime> = signal(DateTime.local());
     fistDayOfActiveMonth: WritableSignal<DateTime> = signal(this.today().startOf('month'));
       daysOfMonth: Signal<DateTime[][]> = computed(() => {
@@ -32,4 +33,30 @@ export class BigCalendarComponent {
     
             return weeks;
         });
+
+     activeDayMeetings: Signal<string[]> = computed(() => {
+        const activeDay = this.activeDay();
+        if (activeDay === null) {
+            return [];
+        }
+        const activeDayISO = activeDay.toISODate();
+
+        if (!activeDayISO) {
+            return [];
+        }
+        return this.meetings[activeDayISO] || [];
+    });
+
+    meetings: Record<string, string[]> = {
+        '2025-03-20': ["Use drugs", "Drink water"],
+        '2025-03-21': ["Use drugs", "Drink water"],
+    };
+
+    getEventsForDay(dayOfMonth: DateTime): string[] | null {
+        const dayISO = dayOfMonth.toISODate();
+        if (dayISO) {
+            return this.meetings[dayISO];
+        }
+        return null;
+    }
 }

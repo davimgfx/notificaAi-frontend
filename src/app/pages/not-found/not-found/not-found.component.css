@@ -1,0 +1,34 @@
+.section{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.number404{
+    position: absolute;
+    font-size: 300px;
+    filter: blur(3px);
+    opacity: 11%;
+
+}
+
+.text-message{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 3;
+}
+
+.text-message span{
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.button{
+    margin: 0 auto;
+}

@@ -12,8 +12,16 @@
                             <div
                                 class="calendar-day-cell"
                             >
-                                {{ dayOfMonth.day }}
-     
+                                <div class="calendar-day-cell-header">
+                                    {{ dayOfMonth.day }}
+                                </div>
+                                @if(getEventsForDay(dayOfMonth)?.length !== null){
+                                <div class="calendar-day-cell-events">
+                                    @for(event of getEventsForDay(dayOfMonth); track $index){
+                                        <span class="calendar-day-cell-event">{{ event }}</span>
+                                    }
+                                </div>
+                                }
                             </div>
                         }
                     </div>
