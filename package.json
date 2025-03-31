@@ -7,7 +7,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:notificaAi-frontend": "node dist/notifica-ai-frontend/server/server.mjs"
+    "serve:ssr:notificaAi-frontend": "node dist/notifica-ai-frontend/server/server.mjs",
+    "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
+    "prettier": "npx prettier --write ."
   },
   "private": true,
   "dependencies": {
@@ -37,12 +40,18 @@
     "@types/jasmine": "~5.1.0",
     "@types/luxon": "^3.4.2",
     "@types/node": "^18.18.0",
+    "angular-eslint": "19.3.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.5.2"
+    "prettier": "^3.5.3",
+    "typescript": "~5.5.2",
+    "typescript-eslint": "8.27.0"
   }
 }

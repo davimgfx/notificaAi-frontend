@@ -4,16 +4,16 @@ export interface Column {
     tasks: Task[];
 }
 
-export type Anticipation= {
+export interface Anticipation {
     minBefore: 5 | 10 | 15
-};
+}
 
-export type Apps= {
+export interface Apps {
     app: "instagram" | "telegram" | "whatsapp" | "x" | "gmail"
-};
+}
 
 
-export type Task = {
+export interface Task {
   id_task: number;
   title: string;
   description: string;

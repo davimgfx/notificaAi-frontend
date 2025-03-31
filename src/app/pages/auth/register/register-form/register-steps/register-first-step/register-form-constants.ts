@@ -1,7 +1,7 @@
 import { inject } from "@angular/core";
 import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
 
-export type ResponseUser = {
+export interface ResponseUser {
     message: string;
     success: boolean;
     errors?: {
@@ -10,7 +10,7 @@ export type ResponseUser = {
     }
 }
 
-type createAccountFormControl = {
+interface createAccountFormControl {
     name: FormControl<string>;
     email: FormControl<string>;
 }

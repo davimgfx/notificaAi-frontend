@@ -19,11 +19,11 @@ type InputType = 'button' | 'text' | 'password' | 'email' | 'number';
 export class InputComponent implements ControlValueAccessor {
   @Input() type: InputType = 'text';
 
-  @Input() placeholder: string = '';
+  @Input() placeholder = '';
 
-  @Input() hasError: { [key: string]: boolean } = {};
+  @Input() hasError: Record<string, boolean> = {};
 
-  value: string = '';
+  value = '';
   onChange: any = () => {};
   onTouched: any = () => {};
 

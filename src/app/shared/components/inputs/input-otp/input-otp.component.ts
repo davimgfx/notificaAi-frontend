@@ -26,9 +26,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class InputOTPComponent implements ControlValueAccessor {
   @ViewChildren('otpInput') otpInputs!: QueryList<ElementRef>;
 
-  @Input() hasError: { [key: string]: boolean } = {};
+  @Input() hasError: Record<string, boolean> = {};
 
-  private _value: string = ''; // Agora é uma string completa
+  private _value = ''; // Agora é uma string completa
   onChange: (value: string) => void = () => {};
   onTouched: () => void = () => {};
 

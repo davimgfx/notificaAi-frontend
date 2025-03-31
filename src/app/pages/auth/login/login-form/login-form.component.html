@@ -1,18 +1,31 @@
-<div class="login_form" >
-    <img src="arrow-left.svg" alt="seta para voltar" class="arrow_back" (click)="backStep()" *ngIf="form_step === 2">
-    <div class="login_form_title">
-        <h2>Bem vindo de volta</h2>
-        <span>Entre na sua conta</span>
+<div class="login_form">
+  <img
+    src="arrow-left.svg"
+    alt="seta para voltar"
+    class="arrow_back"
+    (click)="backStep()"
+    *ngIf="form_step === 2" />
+  <div class="login_form_title">
+    <h2>Bem vindo de volta</h2>
+    <span>Entre na sua conta</span>
+  </div>
+  <div *ngIf="form_step === 1" class="form_step">
+    <app-login-first-step (nextStep)="nextStep()"></app-login-first-step>
+    <span
+      >Não tem uma conta ainda?
+      <a [routerLink]="REGISTER_ROUTER" class="link_text">Criar agora</a></span
+    >
+  </div>
+  <div *ngIf="form_step === 2" class="form_step">
+    <div class="login_form_input">
+      <label
+        >Enviamos um código de confirgmação de 6 dígitos para seu email. Digite
+        o codigo:</label
+      >
+      <app-input-otp></app-input-otp>
     </div>
-    <div *ngIf="form_step === 1" class="form_step">
-        <app-login-first-step (nextStep)="nextStep()"></app-login-first-step>
-        <span>Não tem uma conta ainda? <a [routerLink]="REGISTER_ROUTER" class="link_text">Criar agora</a></span>
-    </div>
-    <div *ngIf="form_step === 2"  class="form_step">
-        <div  class="login_form_input">
-            <label>Enviamos um código de confirgmação de 6 dígitos para seu email. Digite o codigo:</label>
-            <app-input-otp></app-input-otp>
-        </div>
-        <app-button width="full" variant="normal" type="button">Fazer login</app-button>
-    </div>
+    <app-button width="full" variant="normal" type="button"
+      >Fazer login</app-button
+    >
+  </div>
 </div>

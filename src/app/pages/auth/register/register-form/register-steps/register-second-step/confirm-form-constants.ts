@@ -1,7 +1,7 @@
 import { inject } from "@angular/core";
 import { FormControl, FormGroup, NonNullableFormBuilder, Validators } from "@angular/forms";
 
-type confirmAccountFormControl = {
+interface confirmAccountFormControl {
     accessToken: FormControl<string>;
 }
 

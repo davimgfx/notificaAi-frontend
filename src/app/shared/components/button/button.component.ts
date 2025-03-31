@@ -15,7 +15,7 @@ type ButtonType = 'button' | 'submit' | 'reset';
     styleUrl: './button.component.css'
 })
 export class ButtonComponent {
-  @Input() label: string = 'Button';
+  @Input() label = 'Button';
   @Input() variant: ButtonVariant = 'container';
   @Input() width: ButtonWidth = 'auto';
   @Input() type: ButtonType = 'button';
