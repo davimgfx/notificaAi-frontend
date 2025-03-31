@@ -1,8 +1,24 @@
-<form class="form" [formGroup]="confirmAccountForm" (ngSubmit)="submitConfirmUserForm()"> 
+<form
+    class="form"
+    [formGroup]="confirmAccountForm"
+    (ngSubmit)="submitConfirmUserForm()">
     <div class="register_form_input">
-        <label>Enviamos um código de confirgmação de 6 dígitos para seu email. Digite o codigo:</label>
-        <app-input-otp  formControlName="accessToken" [hasError]="{'input-error': hasErrorFormFunc('accessToken')}"></app-input-otp>
-        <app-custom-validation-messages controlName="accessToken" [minLength]="6" [maxLength]="6" />
+        <label for="accessToken"
+            >Enviamos um código de confirgmação de 6 dígitos para seu email.
+            Digite o codigo:</label
+        >
+        <app-input-otp
+            id="accessToken"
+            formControlName="accessToken"
+            [hasError]="{
+                'input-error': hasErrorFormFunc('accessToken'),
+            }"></app-input-otp>
+        <app-custom-validation-messages
+            controlName="accessToken"
+            [minLength]="6"
+            [maxLength]="6" />
     </div>
-     <app-button width="full" variant="normal" type="submit">Fazer login</app-button>
+    <app-button width="full" variant="normal" type="submit"
+        >Fazer login</app-button
+    >
 </form>

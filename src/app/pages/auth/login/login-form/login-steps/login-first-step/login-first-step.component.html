@@ -1,13 +1,16 @@
 <form action="">
-  <div class="login_form_input">
-    <label>Email</label>
-    <app-input placeholder="Digite seu email" type="email"></app-input>
-  </div>
-  <app-button
-    width="full"
-    variant="normal"
-    type="button"
-    (click)="submitLoginFirstStep()"
-    >Próxima etapa</app-button
-  >
+    <div class="login_form_input">
+        <label for="email">Email</label>
+        <app-input
+            id="email"
+            placeholder="Digite seu email"
+            type="email"></app-input>
+    </div>
+    <app-button
+        width="full"
+        variant="normal"
+        type="button"
+        (click)="submitLoginFirstStep()"
+        >Próxima etapa</app-button
+    >
 </form>

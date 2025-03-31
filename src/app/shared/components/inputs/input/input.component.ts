@@ -24,22 +24,24 @@ export class InputComponent implements ControlValueAccessor {
     @Input() hasError: Record<string, boolean> = {};
 
     value = '';
-    onChange: any = () => {};
-    onTouched: any = () => {};
+    onChange: (value: string) => void = () => {
+        return;
+    };
+    onTouched: () => void = () => {
+        return;
+    };
 
     writeValue(value: string): void {
         this.value = value;
     }
 
-    registerOnChange(fn: any): void {
+    registerOnChange(fn: (value: string) => void): void {
         this.onChange = fn;
     }
 
-    registerOnTouched(fn: any): void {
+    registerOnTouched(fn: () => void): void {
         this.onTouched = fn;
     }
-
-    setDisabledState?(isDisabled: boolean): void {}
 
     onInput(event: Event): void {
         const input = event.target as HTMLInputElement;

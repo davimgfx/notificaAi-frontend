@@ -1,32 +1,38 @@
 <form
-  class="form"
-  [formGroup]="createUserForm"
-  (ngSubmit)="submitCreateUserForm()">
-  <div class="register_form_input">
-    <label>Nome</label>
-    <app-input
-      placeholder="Digite seu nome"
-      type="text"
-      formControlName="name"
-      [hasError]="{ 'input-error': hasErrorFormFunc('name') }"></app-input>
-    <app-custom-validation-messages
-      controlName="name"
-      [maxLength]="30"
-      [minLength]="3" />
-  </div>
-  <div class="register_form_input">
-    <label>Email</label>
-    <app-input
-      placeholder="Digite seu email"
-      type="email"
-      formControlName="email"
-      [hasError]="{ 'input-error': hasErrorFormFunc('email') }"></app-input>
-    <app-custom-validation-messages
-      controlName="email"
-      [maxLength]="30"
-      [minLength]="6" />
-  </div>
-  <app-button width="full" variant="normal" type="submit"
-    >Próxima etapa</app-button
-  >
+    class="form"
+    [formGroup]="createUserForm"
+    (ngSubmit)="submitCreateUserForm()">
+    <div class="register_form_input">
+        <label for="name">Nome</label>
+        <app-input
+            id="name"
+            placeholder="Digite seu nome"
+            type="text"
+            formControlName="name"
+            [hasError]="{
+                'input-error': hasErrorFormFunc('name'),
+            }"></app-input>
+        <app-custom-validation-messages
+            controlName="name"
+            [maxLength]="30"
+            [minLength]="3" />
+    </div>
+    <div class="register_form_input">
+        <label for="email">Email</label>
+        <app-input
+            id="email"
+            placeholder="Digite seu email"
+            type="email"
+            formControlName="email"
+            [hasError]="{
+                'input-error': hasErrorFormFunc('email'),
+            }"></app-input>
+        <app-custom-validation-messages
+            controlName="email"
+            [maxLength]="30"
+            [minLength]="6" />
+    </div>
+    <app-button width="full" variant="normal" type="submit"
+        >Próxima etapa</app-button
+    >
 </form>

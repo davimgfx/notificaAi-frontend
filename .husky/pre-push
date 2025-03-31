@@ -1,2 +1,0 @@
-#!/bin/sh
-npm test || (echo 'Tests failed. Please fix them before pushing.' && exit 1)

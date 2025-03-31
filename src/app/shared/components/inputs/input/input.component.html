@@ -1,8 +1,7 @@
 <input
-  [type]="type"
-  [placeholder]="placeholder"
-  class="input"
-  [value]="value"
-  (input)="onInput($event)"
-  (blur)="onTouched()"
-  [class.input-error]="hasError['input-error']" />
+    [type]="type"
+    [placeholder]="placeholder"
+    class="input"
+    [value]="value"
+    (input)="onInput($event)"
+    [class.input-error]="hasError['input-error']" />

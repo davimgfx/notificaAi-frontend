@@ -28,6 +28,6 @@ describe('NavbarComponent', () => {
     });
 
     it('should create the NavbarComponent', () => {
-        expect(component).toBeFalsy();
+        expect(component).toBeTruthy();
     });
 });

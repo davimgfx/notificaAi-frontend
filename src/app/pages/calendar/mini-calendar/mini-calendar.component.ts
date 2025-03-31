@@ -1,35 +1,45 @@
 import { CommonModule } from '@angular/common';
-import { Component, computed, OnInit, Signal, signal, WritableSignal } from '@angular/core';
+import {
+    Component,
+    computed,
+    Signal,
+    signal,
+    WritableSignal,
+} from '@angular/core';
 import { DateTime, Info, Interval } from 'luxon';
 
 @Component({
     selector: 'app-mini-calendar',
     imports: [CommonModule],
     templateUrl: './mini-calendar.component.html',
-    styleUrl: './mini-calendar.component.css'
+    styleUrl: './mini-calendar.component.css',
 })
 export class MiniCalendarComponent {
     today: Signal<DateTime> = signal(DateTime.local());
-    fistDayOfActiveMonth: WritableSignal<DateTime> = signal(this.today().startOf('month'));
-    
-    weekDays: Signal<string[]> = signal(Info.weekdays("narrow").map((date) => 
-       date.toLowerCase()
-    ));
+    fistDayOfActiveMonth: WritableSignal<DateTime> = signal(
+        this.today().startOf('month')
+    );
+
+    weekDays: Signal<string[]> = signal(
+        Info.weekdays('narrow').map(date => date.toLowerCase())
+    );
 
     daysOfMonth: Signal<DateTime[][]> = computed(() => {
         const days = Interval.fromDateTimes(
-            this.fistDayOfActiveMonth().startOf("week"),
-            this.fistDayOfActiveMonth().endOf("month").endOf("week")
-        ).splitBy({ days: 1 }).map((day) => {
-            if (day.start === null) {
-                throw new Error("Day is null");
-            }
-            return day.start;
-        });
+            this.fistDayOfActiveMonth().startOf('week'),
+            this.fistDayOfActiveMonth().endOf('month').endOf('week')
+        )
+            .splitBy({ days: 1 })
+            .map(day => {
+                if (day.start === null) {
+                    throw new Error('Day is null');
+                }
+                return day.start;
+            });
 
         // Divide o array de dias em semanas (grupos de 7)
         const weeks: DateTime[][] = [];
-        console.log(weeks)
+        console.log(weeks);
         for (let i = 0; i < days.length; i += 7) {
             weeks.push(days.slice(i, i + 7));
         }
@@ -54,8 +64,8 @@ export class MiniCalendarComponent {
     });
 
     meetings: Record<string, string[]> = {
-        '2025-03-20': ["Use drugs", "Drink water"],
-        '2025-03-21': ["Use drugs", "Drink water"],
+        '2025-03-20': ['Use drugs', 'Drink water'],
+        '2025-03-21': ['Use drugs', 'Drink water'],
     };
 
     getEventsForDay(dayOfMonth: DateTime): string[] | null {
@@ -69,7 +79,7 @@ export class MiniCalendarComponent {
     onDayClick(dayOfMonth: DateTime): void {
         if (dayOfMonth.month !== this.fistDayOfActiveMonth().month) {
             // Atualiza o mês ativo para o mês do dia clicado
-            this.fistDayOfActiveMonth.set(dayOfMonth.startOf("month"));
+            this.fistDayOfActiveMonth.set(dayOfMonth.startOf('month'));
         }
 
         // Atualiza o dia ativo
