@@ -1,23 +1,35 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavbarComponent } from './navbar.component';
+import { ButtonComponent } from '../button/button.component';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router'; // Import ActivatedRoute
+import { of } from 'rxjs'; // Import 'of' for mocking observables
+
+// Mock ActivatedRoute to avoid actual routing dependencies in the test
+class MockActivatedRoute {
+    // Provide any needed properties or methods
+    snapshot = { data: {} };
+    params = of({}); // Mocking route params as an observable
+}
 
 describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+    let component: NavbarComponent;
+    let fixture: ComponentFixture<NavbarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [NavbarComponent]
-    })
-    .compileComponents();
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [NavbarComponent, ButtonComponent, CommonModule], // Import necessary modules
+            providers: [
+                { provide: ActivatedRoute, useClass: MockActivatedRoute }, // Mock ActivatedRoute provider
+            ],
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(NavbarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(NavbarComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges(); // Trigger change detection
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create the NavbarComponent', () => {
+        expect(component).toBeTruthy();
+    });
 });

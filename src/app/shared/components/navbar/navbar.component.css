@@ -1,35 +1,35 @@
 @import url('../../../../styles/styles.css');
 
-.header{
+.header {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 24px 32px;
-    background-color: #F9F9FF;
+    background-color: #f9f9ff;
     font-family: 'TT Hoves', sans-serif;
 }
 
-.nav_links{
+.nav_links {
     display: flex;
     gap: 16px;
     justify-content: center;
     align-items: center;
 }
 
-.nav_link{
+.nav_link {
     font-size: 18px;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
 }
 
-.buttons_auth{
+.buttons_auth {
     display: flex;
-    gap:8px;
+    gap: 8px;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -37,66 +37,62 @@
     font-size: 18px;
 }
 
-.logo .logo_img{
+.logo .logo_img {
     width: 48px;
     height: 48px;
 }
 
-.hamburger_button{
+.hamburger_button {
     display: none;
     cursor: pointer;
     font-size: 20px;
     font-weight: 500;
     user-select: none;
-    -webkit-user-select: none; 
-    -moz-user-select: none; 
-    -ms-user-select: none; 
-
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.hamburger_menu{
+.hamburger_menu {
     position: absolute;
     display: flex;
     bottom: 0px;
     left: 0;
     height: 0;
     width: 100%;
-    
 }
 
-.menu{
+.menu {
     display: none;
 }
 
-
 @media only screen and (max-width: 1024px) {
-    .header{
+    .header {
         justify-content: space-between;
     }
-    
-    .nav_link{
+
+    .nav_link {
         display: none;
     }
 
-    .button_auth{
+    .button_auth {
         display: none;
     }
 
-    .hamburger_button{
+    .hamburger_button {
         display: block;
     }
 
-    .menu{
+    .menu {
         height: 300px;
         width: 100%;
         padding: 24px;
         border-bottom: 1px solid var(--gray);
-        background: #F9F9FF;
+        background: #f9f9ff;
         display: flex;
         flex-direction: column;
         gap: 16px;
         font-size: 18px;
         font-weight: 500;
     }
-
 }
