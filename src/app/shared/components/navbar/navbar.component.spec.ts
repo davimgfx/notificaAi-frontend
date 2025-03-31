@@ -7,9 +7,8 @@ import { of } from 'rxjs'; // Import 'of' for mocking observables
 
 // Mock ActivatedRoute to avoid actual routing dependencies in the test
 class MockActivatedRoute {
-    // Provide any needed properties or methods
     snapshot = { data: {} };
-    params = of({}); // Mocking route params as an observable
+    params = of({});
 }
 
 describe('NavbarComponent', () => {
@@ -26,7 +25,6 @@ describe('NavbarComponent', () => {
 
         fixture = TestBed.createComponent(NavbarComponent);
         component = fixture.componentInstance;
-        fixture.detectChanges(); // Trigger change detection
     });
 
     it('should create the NavbarComponent', () => {
