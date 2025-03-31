@@ -6,11 +6,10 @@ import { RegisterFirstStepComponent } from "./register-steps/register-first-step
 import { RegisterSecondStepComponent } from "./register-steps/register-second-step/register-second-step.component";
 
 @Component({
-  selector: 'app-register-form',
-  standalone: true,
-  imports: [CommonModule, RouterLink, RegisterFirstStepComponent, RegisterSecondStepComponent],
-  templateUrl: './register-form.component.html',
-  styleUrl: './register-form.component.css'
+    selector: 'app-register-form',
+    imports: [CommonModule, RouterLink, RegisterFirstStepComponent, RegisterSecondStepComponent],
+    templateUrl: './register-form.component.html',
+    styleUrl: './register-form.component.css'
 })
 
 export class RegisterFormComponent {

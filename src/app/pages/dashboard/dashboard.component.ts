@@ -4,11 +4,10 @@ import { KanbanBoardComponent } from "./kanban-board/kanban-board.component";
 import { ButtonComponent } from "../../shared/components/button/button.component";
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [SidebarComponent, KanbanBoardComponent, ButtonComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+    selector: 'app-dashboard',
+    imports: [SidebarComponent, KanbanBoardComponent, ButtonComponent],
+    templateUrl: './dashboard.component.html',
+    styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
     today_date: Date = new Date();

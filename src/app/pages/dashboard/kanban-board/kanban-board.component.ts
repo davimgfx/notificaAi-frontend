@@ -5,11 +5,10 @@ import { appIcons, Apps, Column, staticColumns } from './constants-kanban';
 
 
 @Component({
-  selector: 'app-kanban-board',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './kanban-board.component.html',
-  styleUrl: './kanban-board.component.css'
+    selector: 'app-kanban-board',
+    imports: [CommonModule],
+    templateUrl: './kanban-board.component.html',
+    styleUrl: './kanban-board.component.css'
 })
 
 export class KanbanBoardComponent {

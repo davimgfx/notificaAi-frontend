@@ -8,11 +8,10 @@ import { InputOTPComponent } from "../../../../../../shared/components/inputs/in
 
 
 @Component({
-  selector: 'app-register-second-step',
-  standalone: true,
-  imports: [ReactiveFormsModule, CustomValidationMessagesComponent, ButtonComponent, InputOTPComponent],
-  templateUrl: './register-second-step.component.html',
-  styleUrl: '../register-form-steps.css'
+    selector: 'app-register-second-step',
+    imports: [ReactiveFormsModule, CustomValidationMessagesComponent, ButtonComponent, InputOTPComponent],
+    templateUrl: './register-second-step.component.html',
+    styleUrl: '../register-form-steps.css'
 })
 
 export class RegisterSecondStepComponent {

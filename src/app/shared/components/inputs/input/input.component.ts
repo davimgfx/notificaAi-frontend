@@ -4,18 +4,17 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 type InputType = 'button' | 'text' | 'password' | 'email' | 'number';
 
 @Component({
-  selector: 'app-input',
-  standalone: true,
-  imports: [],
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputComponent),
-      multi: true,
-    },
-  ],
-  templateUrl: './input.component.html',
-  styleUrl: './input.component.css',
+    selector: 'app-input',
+    imports: [],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => InputComponent),
+            multi: true,
+        },
+    ],
+    templateUrl: './input.component.html',
+    styleUrl: './input.component.css'
 })
 export class InputComponent implements ControlValueAccessor {
   @Input() type: InputType = 'text';

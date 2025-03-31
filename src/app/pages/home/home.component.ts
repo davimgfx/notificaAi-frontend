@@ -7,11 +7,10 @@ import { FooterComponent } from "../../shared/components/footer/footer.component
 import { AppsChooseComponent } from "./apps-choose/apps-choose.component";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [NavbarComponent, HeroComponent, HowWorksComponent, PlansComponent, FooterComponent, AppsChooseComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [NavbarComponent, HeroComponent, HowWorksComponent, PlansComponent, FooterComponent, AppsChooseComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent {
 

@@ -8,11 +8,10 @@ import { CommonModule } from '@angular/common';
 import { LoginFirstStepComponent } from "./login-steps/login-first-step/login-first-step.component";
 
 @Component({
-  selector: 'app-login-form',
-  standalone: true,
-  imports: [ButtonComponent, CommonModule, InputOTPComponent, RouterLink, CommonModule, LoginFirstStepComponent],
-  templateUrl: './login-form.component.html',
-  styleUrl: './login-form.component.css'
+    selector: 'app-login-form',
+    imports: [ButtonComponent, CommonModule, InputOTPComponent, RouterLink, CommonModule, LoginFirstStepComponent],
+    templateUrl: './login-form.component.html',
+    styleUrl: './login-form.component.css'
 })
 export class LoginFormComponent {
      REGISTER_ROUTER = "../" + AUTH.REGISTER;

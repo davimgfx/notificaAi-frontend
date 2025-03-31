@@ -8,11 +8,10 @@ import { HotToastService } from '@ngxpert/hot-toast';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-register-first-step',
-  standalone: true,
-  imports: [InputComponent, ReactiveFormsModule, CustomValidationMessagesComponent, ButtonComponent],
-  templateUrl: './register-first-step.component.html',
-  styleUrl: '../register-form-steps.css'
+    selector: 'app-register-first-step',
+    imports: [InputComponent, ReactiveFormsModule, CustomValidationMessagesComponent, ButtonComponent],
+    templateUrl: './register-first-step.component.html',
+    styleUrl: '../register-form-steps.css'
 })
 export class RegisterFirstStepComponent {
     createUserForm = createAccountForm()

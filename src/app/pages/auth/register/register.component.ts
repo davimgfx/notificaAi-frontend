@@ -5,11 +5,10 @@ import { RouterLink } from '@angular/router';
 import { RegisterFormComponent } from './register-form/register-form.component';
 
 @Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [CommonModule, RegisterFormComponent , RouterLink ],
-  templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+    selector: 'app-register',
+    imports: [CommonModule, RegisterFormComponent, RouterLink],
+    templateUrl: './register.component.html',
+    styleUrl: './register.component.css'
 })
 export class RegisterComponent {
        HOME_ROUTER = "../"  +  HOME.ROOT;

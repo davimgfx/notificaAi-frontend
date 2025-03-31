@@ -3,11 +3,10 @@ import { Component, computed, OnInit, Signal, signal, WritableSignal } from '@an
 import { DateTime, Info, Interval } from 'luxon';
 
 @Component({
-  selector: 'app-mini-calendar',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './mini-calendar.component.html',
-  styleUrl: './mini-calendar.component.css'
+    selector: 'app-mini-calendar',
+    imports: [CommonModule],
+    templateUrl: './mini-calendar.component.html',
+    styleUrl: './mini-calendar.component.css'
 })
 export class MiniCalendarComponent {
     today: Signal<DateTime> = signal(DateTime.local());

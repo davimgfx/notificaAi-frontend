@@ -2,11 +2,10 @@ import { Component, inject, Input } from '@angular/core';
 import { ControlContainer, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-custom-validation-messages',
-  standalone: true,
-  imports: [],
-  templateUrl: './custom-validation-messages.component.html',
-  styleUrl: './custom-validation-messages.component.css'
+    selector: 'app-custom-validation-messages',
+    imports: [],
+    templateUrl: './custom-validation-messages.component.html',
+    styleUrl: './custom-validation-messages.component.css'
 })
 export class CustomValidationMessagesComponent {
   @Input({ required: true })

@@ -3,11 +3,10 @@ import { DateTime, Interval } from 'luxon';
 import { ButtonComponent } from "../../../shared/components/button/button.component";
 
 @Component({
-  selector: 'app-big-calendar',
-  standalone: true,
-  imports: [ButtonComponent],
-  templateUrl: './big-calendar.component.html',
-  styleUrl: './big-calendar.component.css'
+    selector: 'app-big-calendar',
+    imports: [ButtonComponent],
+    templateUrl: './big-calendar.component.html',
+    styleUrl: './big-calendar.component.css'
 })
 export class BigCalendarComponent {
     activeDay: WritableSignal<DateTime> = signal(DateTime.local());

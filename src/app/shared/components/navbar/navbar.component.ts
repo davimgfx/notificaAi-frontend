@@ -5,11 +5,10 @@ import { AUTH } from '../../../core/models/constants-routing';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [ButtonComponent, CommonModule, RouterLink],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+    selector: 'app-navbar',
+    imports: [ButtonComponent, CommonModule, RouterLink],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
     AUTH_ROUTER = AUTH;

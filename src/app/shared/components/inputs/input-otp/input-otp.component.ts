@@ -10,18 +10,17 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-  selector: 'app-input-otp',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './input-otp.component.html',
-  styleUrl: './input-otp.component.css',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputOTPComponent),
-      multi: true,
-    },
-  ],
+    selector: 'app-input-otp',
+    imports: [CommonModule],
+    templateUrl: './input-otp.component.html',
+    styleUrl: './input-otp.component.css',
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => InputOTPComponent),
+            multi: true,
+        },
+    ]
 })
 
 export class InputOTPComponent implements ControlValueAccessor {
