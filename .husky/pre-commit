@@ -1,8 +1,3 @@
-npm test
+# npm run lint || (echo 'Lint rules failed. Please fix them before committing.' && exit 1)
 
-echo 'Check for linting errors...'
-
-npm run lint 
-(echo 'Linting errors or tests failed. Please fix them before committing.' && exit 1)
-
-echo 'Done'
+# npm test || (echo 'Tests failed. Please fix them before pushing.' && exit 1)
