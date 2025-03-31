@@ -14,36 +14,36 @@ type InputType = 'button' | 'text' | 'password' | 'email' | 'number';
         },
     ],
     templateUrl: './input.component.html',
-    styleUrl: './input.component.css'
+    styleUrl: './input.component.css',
 })
 export class InputComponent implements ControlValueAccessor {
-  @Input() type: InputType = 'text';
+    @Input() type: InputType = 'text';
 
-  @Input() placeholder = '';
+    @Input() placeholder = '';
 
-  @Input() hasError: Record<string, boolean> = {};
+    @Input() hasError: Record<string, boolean> = {};
 
-  value = '';
-  onChange: any = () => {};
-  onTouched: any = () => {};
+    value = '';
+    onChange: any = () => {};
+    onTouched: any = () => {};
 
-  writeValue(value: string): void {
-    this.value = value;
-  }
+    writeValue(value: string): void {
+        this.value = value;
+    }
 
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
+    registerOnChange(fn: any): void {
+        this.onChange = fn;
+    }
 
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
+    registerOnTouched(fn: any): void {
+        this.onTouched = fn;
+    }
 
-  setDisabledState?(isDisabled: boolean): void {}
+    setDisabledState?(isDisabled: boolean): void {}
 
-  onInput(event: Event): void {
-    const input = event.target as HTMLInputElement;
-    this.value = input.value;
-    this.onChange(this.value);
-  }
+    onInput(event: Event): void {
+        const input = event.target as HTMLInputElement;
+        this.value = input.value;
+        this.onChange(this.value);
+    }
 }
