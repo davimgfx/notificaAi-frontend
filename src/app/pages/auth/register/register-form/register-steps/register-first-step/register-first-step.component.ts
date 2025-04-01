@@ -9,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CustomValidationMessagesComponent } from '../../../../../../shared/components/custom-validation-messages/custom-validation-messages.component';
 import { ButtonComponent } from '../../../../../../shared/components/button/button.component';
 import { HotToastService } from '@ngxpert/hot-toast';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
     selector: 'app-register-first-step',
@@ -43,12 +43,26 @@ export class RegisterFirstStepComponent {
                     this.toast.observe({
                         loading: 'Salvando...',
                         success: (response: ResponseUser) => response.message,
-                        error: () => 'Erro ao criar usuário',
+                        error: (error: unknown): string => {
+                            if (error instanceof HttpErrorResponse) {
+                                if (
+                                    error.status === 0 ||
+                                    error.status === 500
+                                ) {
+                                    return 'Erro desconhecido, tente novamente mais tarde!';
+                                }
+                                return (
+                                    error.error.message || 'Erro desconhecido'
+                                );
+                            }
+                            return 'Erro desconhecido, tente novamente mais tarde!';
+                        },
                     })
                 )
                 .subscribe({
                     next: () => this.stepChange.emit(),
                     error: error => {
+                        console.log(error);
                         if (error.error && error.error.errors) {
                             console.log(error.error.errors);
                             // Percorre os erros e exibe um toast para cada campo
