@@ -10,7 +10,7 @@
         <span>Entre na sua conta</span>
     </div>
     <div *ngIf="form_step === 1" class="form_step">
-        <app-login-first-step (nextStep)="nextStep()"></app-login-first-step>
+        <app-login-email-step (nextStep)="nextStep()"></app-login-email-step>
         <span
             >Não tem uma conta ainda?
             <a [routerLink]="REGISTER_ROUTER" class="link_text"
@@ -19,15 +19,6 @@
         >
     </div>
     <div *ngIf="form_step === 2" class="form_step">
-        <div class="login_form_input">
-            <label for="otp-input"
-                >Enviamos um código de confirgmação de 6 dígitos para seu email.
-                Digite o codigo:</label
-            >
-            <app-input-otp id="otp-input"></app-input-otp>
-        </div>
-        <app-button width="full" variant="normal" type="button"
-            >Fazer login</app-button
-        >
+        <app-login-token-step></app-login-token-step>
     </div>
 </div>

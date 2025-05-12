@@ -1,17 +1,22 @@
 <div class="register_form">
     <div *ngIf="form_step === 1" class="form_step">
-        <div class="register_form_title" >
+        <div class="register_form_title">
             <h2>Bem vindo ao NotificaAi</h2>
             <span>Criar uma conta</span>
         </div>
-        <app-register-first-step (stepChange)="nextStep()"></app-register-first-step>
-        <span>Já tem uma conta? <a [routerLink]="LOGIN_ROUTER" class="link_text">Entrar agora</a></span>
+        <app-register-step (stepChange)="nextStep()"></app-register-step>
+        <span
+            >Já tem uma conta?
+            <a [routerLink]="LOGIN_ROUTER" class="link_text"
+                >Entrar agora</a
+            ></span
+        >
     </div>
-    <div *ngIf="form_step === 2"  class="form_step">
-        <div class="register_form_title" >
+    <div *ngIf="form_step === 2" class="form_step">
+        <div class="register_form_title">
             <h2>Conta criada!</h2>
             <span>Agora confirme sua conta</span>
         </div>
-        <app-register-second-step></app-register-second-step>
+        <app-register-confirm-step></app-register-confirm-step>
     </div>
 </div>

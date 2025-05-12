@@ -1,38 +1,38 @@
-
 a {
     text-decoration: underline;
     cursor: pointer;
 }
 
-.section{
+.section {
     position: relative;
     height: 100%;
 }
-.logo{
+
+.logo {
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 600;
     font-size: 18px;
     position: absolute;
-    top:24px;
+    top: 24px;
     left: 24px;
     text-decoration: none;
 }
 
-.logo_img{
+.logo_img {
     width: 35px;
     height: 35px;
 }
 
-.container{
+.container {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
-.login_part{
-    background: #F8F8F8;
+.login_part {
+    background: #f8f8f8;
     justify-content: center;
     flex-direction: column;
     display: flex;
@@ -42,7 +42,7 @@ a {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.twitter_part{
+.twitter_part {
     display: flex;
     align-items: center;
     flex: 1;
@@ -50,7 +50,7 @@ a {
     height: 100vh;
 }
 
-.twitter_part_message{
+.twitter_part_message {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -58,7 +58,7 @@ a {
     margin: 0 auto;
 }
 
-.double_quotes{
+.double_quotes {
     width: 50px;
     position: absolute;
     top: -30px;
@@ -70,7 +70,7 @@ a {
     font-weight: 500;
 }
 
-.twitter_part_message_name{
+.twitter_part_message_name {
     margin-top: 20px;
     display: flex;
     gap: 12px;
@@ -78,8 +78,7 @@ a {
 }
 
 @media only screen and (max-width: 1280px) {
-    .twitter_part{
+    .twitter_part {
         display: none;
     }
-
 }

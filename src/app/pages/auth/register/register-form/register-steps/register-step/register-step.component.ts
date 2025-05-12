@@ -12,17 +12,17 @@ import { HotToastService } from '@ngxpert/hot-toast';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
-    selector: 'app-register-first-step',
+    selector: 'app-register-step',
     imports: [
         InputComponent,
         ReactiveFormsModule,
         CustomValidationMessagesComponent,
         ButtonComponent,
     ],
-    templateUrl: './register-first-step.component.html',
+    templateUrl: './register-step.component.html',
     styleUrl: '../register-form-steps.css',
 })
-export class RegisterFirstStepComponent {
+export class RegisterStepComponent {
     createUserForm = createAccountForm();
 
     @Output() stepChange = new EventEmitter<void>();
