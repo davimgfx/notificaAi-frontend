@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import {
     createAccountForm,
     hasErrorForm,
@@ -26,6 +26,7 @@ export class RegisterStepComponent {
     createUserForm = createAccountForm();
 
     @Output() stepChange = new EventEmitter<void>();
+    @Output() emailChange = new EventEmitter<string>();
 
     constructor(
         private toast: HotToastService,
@@ -33,6 +34,7 @@ export class RegisterStepComponent {
     ) {}
 
     submitCreateUserForm() {
+        this.emailChange.emit(this.createUserForm.value.email);
         if (this.createUserForm.valid) {
             this.http
                 .post<ResponseUser>('http://localhost:8080/auth/register', {

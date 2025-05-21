@@ -4,7 +4,9 @@
             <h2>Bem vindo ao NotificaAi</h2>
             <span>Criar uma conta</span>
         </div>
-        <app-register-step (stepChange)="nextStep()"></app-register-step>
+        <app-register-step
+            (stepChange)="nextStep()"
+            (emailChange)="emailUser = $event"></app-register-step>
         <span
             >Já tem uma conta?
             <a [routerLink]="LOGIN_ROUTER" class="link_text"
@@ -17,6 +19,7 @@
             <h2>Conta criada!</h2>
             <span>Agora confirme sua conta</span>
         </div>
-        <app-register-confirm-step></app-register-confirm-step>
+        <app-register-confirm-step
+            [emailUser]="emailUser"></app-register-confirm-step>
     </div>
 </div>

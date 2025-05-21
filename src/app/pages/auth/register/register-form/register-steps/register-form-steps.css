@@ -1,10 +1,10 @@
-.form{
+.form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.register_form_input{
+.register_form_input {
     display: flex;
     flex-direction: column;
     gap: 4px;

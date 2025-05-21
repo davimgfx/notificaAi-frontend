@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-type ButtonWidth = 'full' | 'auto';
+type ButtonWidth = 'full' | 'auto' | "fit";
 
 type ButtonVariant = 'container' | 'outline' | 'text' | 'normal';
 
